@@ -1,11 +1,14 @@
 const express = require('express')
-const mongoose = require('mongoose');
+const mongoose = require('mongoose'); 
+const cors = require('cors')
 require('./models/metas')
 const Meta = mongoose.model('Meta')
 
 
 const app = express()
 app.use(express.json())
+
+// abcdefghijk
 
 app.use((req, res, next)=> {
     res.header("Access-Control-Allow-Origin");
@@ -60,6 +63,6 @@ app.get('/metas', async (req, res)=> {
       });
   });
 
-  app.listen(3000 , ()=>{
-      console.log("servidor iniciado na porta 3000")
+  app.listen(8080 , ()=>{
+      console.log("servidor iniciado na porta: http://localhost:8080")
   })
